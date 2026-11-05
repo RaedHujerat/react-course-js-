@@ -1,0 +1,59 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><style>
+body{font-family:"Liberation Sans","DejaVu Sans",sans-serif;font-size:13px;margin:0;color:#111}
+h1{font-size:20px;margin:0 0 4px} h2{font-size:15px;margin:22px 0 8px;border-bottom:1px solid #999;padding-bottom:3px}
+.meta{margin-bottom:14px;line-height:1.7}
+ol{padding-right:22px;margin:0} li{margin:0 0 10px}
+pre{direction:ltr;text-align:left;background:#f3f3f3;border:1px solid #ddd;padding:6px 8px;margin:4px 0 0;font-family:"Liberation Mono","DejaVu Sans Mono",monospace;font-size:12px;white-space:pre-wrap}
+.note{color:#555;font-size:12px}
+.tree{direction:ltr;text-align:left}
+</style></head><body>
+<h1>מעבדה 2 – מערכות הפעלה ולינוקס</h1>
+<div class="meta">שם הסטודנט: ____________________ &nbsp;&nbsp; ת"ז: ______________<br>שם המרצה: יבגניה צ'רנומז</div>
+
+<h2>חלק א'</h2>
+<ol>
+<li>מה היא ספריה הנוכחית שלך? כתוב את המסלול המלא.
+<pre>$ pwd
+/home/&lt;username&gt;</pre><span class="note">(יש לרשום את המסלול שמתקבל במחשב שלך)</span></li>
+<li>הדפס את התוכן של ספרית הבית.<pre>$ ls -l ~</pre></li>
+<li>צור קובץ ריק letter1 בספריית בית.<pre>$ touch ~/letter1</pre></li>
+<li>העתק קובץ letter1 לקובץ בשם letter2.<pre>$ cp ~/letter1 ~/letter2</pre></li>
+<li>נתונה היררכית קבצים (cur_dir = ספריית הבית):
+<pre class="tree">~ (cur_dir)
+├── kuku
+│   ├── dir1
+│   │   ├── file1.txt
+│   │   ├── aa.c
+│   │   ├── file2.txt
+│   │   └── bb.c
+│   └── dir2
+│       ├── dir_2
+│       ├── dir_3
+│       ├── ff2.exe
+│       └── ff3.exe
+└── dir3
+    └── dir_3
+        ├── dir_3_1
+        └── dir_3_2</pre></li>
+</ol>
+
+<h2>חלק ב'</h2>
+<ol>
+<li>בנה את ההיררכיה ב-home directory. רשום פקודות שהשתמשת.
+<pre>$ cd ~
+$ mkdir -p kuku/dir1 kuku/dir2/dir_2 kuku/dir2/dir_3
+$ mkdir -p dir3/dir_3/dir_3_1 dir3/dir_3/dir_3_2
+$ touch kuku/dir1/file1.txt kuku/dir1/file2.txt kuku/dir1/aa.c kuku/dir1/bb.c
+$ touch kuku/dir2/ff2.exe kuku/dir2/ff3.exe</pre></li>
+<li>העתק קובץ ff2.exe למדריך dir_3_1<pre>$ cp ~/kuku/dir2/ff2.exe ~/dir3/dir_3/dir_3_1</pre></li>
+<li>העתק קובץ ff3.exe למדריך dir1<pre>$ cp ~/kuku/dir2/ff3.exe ~/kuku/dir1</pre></li>
+<li>מחק מדריך dir_3_1<pre>$ rm -r ~/dir3/dir_3/dir_3_1</pre><span class="note">(נדרש ‎-r כי המדריך אינו ריק – הועתק אליו ff2.exe)</span></li>
+<li>מחק קובץ aa.c<pre>$ rm ~/kuku/dir1/aa.c</pre></li>
+<li>עבור למדריך kuku/dir2<pre>$ cd ~/kuku/dir2</pre></li>
+<li>חזור לספרית בית<pre>$ cd ~</pre></li>
+<li>צור קובץ let3 במדריך kuku/dir2/dir_2<pre>$ touch ~/kuku/dir2/dir_2/let3</pre></li>
+<li>שנה שם של קובץ let3 לשם חדש let_3<pre>$ mv ~/kuku/dir2/dir_2/let3 ~/kuku/dir2/dir_2/let_3</pre></li>
+<li>שנה שם מדריך dir1 לשם חדש dir_1<pre>$ mv ~/kuku/dir1 ~/kuku/dir_1</pre></li>
+<li>שנה שם מדריך kuku לשם חדש kuku_1<pre>$ mv ~/kuku ~/kuku_1</pre></li>
+</ol>
+</body></html>
